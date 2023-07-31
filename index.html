@@ -1,0 +1,23 @@
+<body style="overflow: hidden;">
+    <div style="width: calc(100vw + 10px); height: calc(100vh - 50px); overflow: hidden; margin: -10px -8px 0 -8px;">
+        <iframe id="myIframe" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" style="position: absolute; width: 100%; height: calc(100% + 50px); overflow: hidden;"></iframe>
+    </div>
+
+    <script>
+        // Function to get URL parameter
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Get the 'url' parameter
+        var url = getParameterByName('url');
+
+        // Set the 'src' attribute of the iframe
+        document.getElementById('myIframe').src = url;
+    </script>
+</body>

@@ -17,6 +17,9 @@
         // Get the 'url' parameter
         var url = getParameterByName('url');
 
+        // Replace 'pub' with 'embed' in the URL
+        url = url.replace('pub', 'embed');
+
         // Set the 'src' attribute of the iframe
         document.getElementById('myIframe').src = url;
     </script>
